@@ -25,6 +25,10 @@ spec:
          persistentVolumeClaim:
            claimName: {{ include "team-chat.fullname" . }}-rc-tmp
       restartPolicy: Always
+      securityContext:
+        fsGroup: 65533
+        runAsUser: 65533
+        runAsGroup: 65533      
       containers:
        - name: chat
          image: rocketchat/rocket.chat:latest
