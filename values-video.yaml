@@ -34,3 +34,6 @@ hideWelcomePage: true
 
 image:
   tag: latest
+
+video:
+  lb_address:

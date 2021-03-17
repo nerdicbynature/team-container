@@ -5,3 +5,8 @@ acme:
 app:
   name: cloud
   domain: example.org
+
+gke:
+  traefik_ip:
+  video_ip:
+

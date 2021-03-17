@@ -30,9 +30,7 @@ spec:
           - name: XMPP_SERVER
             value: {{ include "team-video.fullname" . }}-prosody
           - name: DOCKER_HOST_ADDRESS
-            valueFrom:
-              fieldRef:
-                fieldPath: status.hostIP
+            value: "{{ .Values.video.lb_address }}"
           - name: XMPP_DOMAIN
             value: {{ .Values.app.name }}.{{ .Values.app.domain }}
           - name: XMPP_AUTH_DOMAIN
@@ -63,3 +61,6 @@ spec:
             value: focus
           - name: TZ
             value: Europe/Paris
+          - name: PUBLIC_URL
+            value: {{ .Values.app.name }}.{{ .Values.app.domain }}
+

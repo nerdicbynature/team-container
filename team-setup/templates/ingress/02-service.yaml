@@ -16,3 +16,6 @@ spec:
   selector:
     app: traefik
   type: LoadBalancer
+{{- if .Values.gke.traefik_ip }}
+  loadBalancerIP: {{ .Values.gke.traefik_ip }}
+{{ end -}}

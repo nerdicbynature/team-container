@@ -1,0 +1,16 @@
+{{ if .Values.gke.traefik_ip -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: jvb-external-service
+spec:
+  type: LoadBalancer
+  externalTrafficPolicy: Local
+  loadBalancerIP: {{ .Values.gke.traefik_ip }}
+  selector:
+    app: {{ include "team-video.fullname" . }}-jvb
+  ports:
+  - protocol: UDP
+    port: 30000
+    targetPort: 30000
+{{- end }}
