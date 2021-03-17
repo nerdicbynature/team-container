@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
        - name: jvb
-         image: jitsi/jvb
+         image: jitsi/jvb:{{ .Values.image.tag }}
          imagePullPolicy: {{ .Values.app.pullpolicy }}
          ports:
          - containerPort: 30000

@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
        - name: jicofo
-         image: jitsi/jicofo
+         image: jitsi/jicofo:{{ .Values.image.tag }}
          imagePullPolicy: {{ .Values.app.pullpolicy }}
          env:
           {{ if .Values.auth.enabled}}

@@ -31,3 +31,6 @@ hideWelcomePage: true
 # Remove following # to use different stun servers
 # stun:
 #  server: stun.stunprotocol.org:3478, stun.services.mozilla.com:3478
+
+image:
+  tag: latest

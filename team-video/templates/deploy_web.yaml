@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
        - name: web
-         image: jitsi/web
+         image: jitsi/web:{{ .Values.image.tag }}
          imagePullPolicy: {{ .Values.app.pullpolicy }}
          ports:
           - name: web

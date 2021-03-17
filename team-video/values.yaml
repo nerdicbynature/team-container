@@ -25,3 +25,6 @@ secrets:
   jicofo:
     component: "s234sdffghbvjnndf!"
     auth: "sdfokjsdfkl123123123ghghg!"
+
+image:
+  tag: latest
