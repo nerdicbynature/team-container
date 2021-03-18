@@ -30,7 +30,13 @@ spec:
           - name: XMPP_SERVER
             value: {{ include "team-video.fullname" . }}-prosody
           - name: DOCKER_HOST_ADDRESS
-            value: "{{ .Values.video.lb_address }}"
+{{- if .Values.gke.video_ip }}
+            value: "{{ .Values.gke.video_ip }}"
+{{- else }}
+            valueFrom:
+              fieldRef:
+                fieldPath: status.hostIP
+{{- end }}
           - name: XMPP_DOMAIN
             value: {{ .Values.app.name }}.{{ .Values.app.domain }}
           - name: XMPP_AUTH_DOMAIN

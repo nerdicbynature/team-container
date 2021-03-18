@@ -8,5 +8,4 @@ app:
 
 gke:
   traefik_ip:
-  video_ip:
 

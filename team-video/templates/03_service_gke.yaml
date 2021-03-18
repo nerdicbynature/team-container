@@ -1,4 +1,4 @@
-{{ if .Values.gke.traefik_ip -}}
+{{ if .Values.gke.video_ip -}}
 apiVersion: v1
 kind: Service
 metadata:
@@ -6,7 +6,7 @@ metadata:
 spec:
   type: LoadBalancer
   externalTrafficPolicy: Local
-  loadBalancerIP: {{ .Values.gke.traefik_ip }}
+  loadBalancerIP: {{ .Values.gke.video_ip }}
   selector:
     app: {{ include "team-video.fullname" . }}-jvb
   ports:
